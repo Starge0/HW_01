@@ -1,0 +1,48 @@
+[prepare] foggy_countryside.jpg: -> 800x533
+[prepare] foggy_forest.jpg: -> 800x535
+[prepare] foggy_village.jpg: -> 600x800
+/usr/local/lib/python3.12/dist-packages/skimage/metrics/simple_metrics.py:171: RuntimeWarning: divide by zero encountered in scalar divide
+  return 10 * np.log10((data_range**2) / err)
+[done] foggy_countryside
+[done] foggy_forest
+[done] foggy_village
+
+=== Metrics per image ===
+            image            method   PSNR  SSIM    MAE  L_std
+foggy_countryside          baseline 19.214 0.564 24.144 20.842
+foggy_countryside   stretch_channel 11.870 0.321 47.760 57.982
+foggy_countryside stretch_luminance 15.023 0.409 35.062 61.375
+foggy_countryside            he_lab  9.930 0.278 70.073 72.149
+foggy_countryside            he_hsv 12.728 0.313 52.779 59.120
+foggy_countryside         gamma_lab 13.598 0.465 49.990 20.484
+foggy_countryside         clahe_nlm 16.417 0.514 33.415 30.286
+foggy_countryside          original    NaN 1.000  0.000 42.123
+     foggy_forest          baseline 15.927 0.667 32.865 34.413
+     foggy_forest   stretch_channel 23.860 0.572 12.858 68.271
+     foggy_forest stretch_luminance 22.560 0.661 15.192 68.559
+     foggy_forest            he_lab 22.205 0.651 15.296 73.545
+     foggy_forest            he_hsv 24.515 0.647 11.840 65.955
+     foggy_forest         gamma_lab 15.903 0.628 35.602 31.547
+     foggy_forest         clahe_nlm 16.175 0.772 32.508 42.452
+     foggy_forest          original    NaN 1.000  0.000 66.722
+    foggy_village          baseline 16.432 0.697 32.105 33.748
+    foggy_village   stretch_channel 21.154 0.406 18.978 85.000
+    foggy_village stretch_luminance 20.720 0.522 20.229 85.864
+    foggy_village            he_lab 20.500 0.380 20.447 73.231
+    foggy_village            he_hsv 20.724 0.335 19.953 70.266
+    foggy_village         gamma_lab 16.756 0.654 33.131 30.476
+    foggy_village         clahe_nlm 16.556 0.733 32.703 37.621
+    foggy_village          original    NaN 1.000  0.000 65.694
+
+=== Mean over images ===
+                     PSNR   SSIM     MAE   L_std
+method                                          
+baseline           17.191  0.643  29.705  29.667
+stretch_channel    18.961  0.433  26.532  70.418
+stretch_luminance  19.434  0.530  23.494  71.933
+he_lab             17.545  0.437  35.272  72.975
+he_hsv             19.322  0.432  28.190  65.114
+gamma_lab          15.419  0.582  39.574  27.502
+clahe_nlm          16.383  0.673  32.875  36.787
+
+Metrics saved to /home/claude/hw1-image-enhancement/results/metrics.csv
